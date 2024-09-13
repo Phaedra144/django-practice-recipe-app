@@ -16,8 +16,7 @@ def recipe_image_file_path(instance, filename):
     """Generate file path for new recipe image."""
     ext = os.path.splitext(filename)[1]
     filename = f"{uuid.uuid4()}{ext}"
-    path = os.path.join("uploads", "recipe", filename)
-    return path if os.path.isfile(path) else None
+    return os.path.join("uploads", "recipe", filename)
 
 
 class UserManager(BaseUserManager):
